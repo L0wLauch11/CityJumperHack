@@ -1,7 +1,7 @@
 #SingleInstance, force
 Gui, Add, Text, x12 y12 w120 h30 , city jumper hack
-Gui, Add, Edit, x122 y52 w100 h20 , 250
-Gui, Add, Text, v_doubleJumpDelay x232 y52 w130 h20 , doppel sprung delay (ms)
+Gui, Add, Edit, v_doubleJumpDelay x122 y52 w100 h20 , 250
+Gui, Add, Text, x232 y52 w130 h20 , doppel sprung delay (ms)
 Gui, Add, CheckBox, v_doubleJumpActivated x12 y52 w100 h20 , doppel sprung
 Gui, Add, CheckBox, v_activated x12 y32 w100 h20 , hack aktiviert
 Gui, Show, w479 h379, gaming hack
