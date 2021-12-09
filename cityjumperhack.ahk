@@ -2,14 +2,17 @@
 Gui, Add, Text, x12 y12 w120 h30 , city jumper hack
 Gui, Add, Edit, x122 y52 w100 h20 , 250
 Gui, Add, Text, v_doubleJumpDelay x232 y52 w130 h20 , doppel sprung delay (ms)
-Gui, Add, CheckBox, v_doubleJump x12 y52 w100 h20 , doppel sprung
+Gui, Add, CheckBox, v_doubleJumpActivated x12 y52 w100 h20 , doppel sprung
 Gui, Add, CheckBox, v_activated x12 y32 w100 h20 , hack aktiviert
 Gui, Show, w479 h379, gaming hack
 
-SetTimer, ActivateDoubleJump, 60000
+if _doubleJumpActivated
+	SetTimer, ActivateDoubleJump, 60000
 
 Loop:
+_doubleJump := false
 _grounded := false
+
 while(_activated)
 {
 	_pixel := 0x000000
