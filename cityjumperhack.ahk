@@ -2,23 +2,18 @@
 Gui, Add, Text, x12 y12 w120 h30 , city jumper hack
 Gui, Add, Edit, v_doubleJumpDelay x122 y52 w100 h20 , 250
 Gui, Add, Text, x232 y52 w130 h20 , doppel sprung delay (ms)
-Gui, Add, CheckBox, v_doubleJumpActivated x12 y52 w100 h20 , doppel sprung
-Gui, Add, CheckBox, v_activated x12 y32 w100 h20 , hack aktiviert
 Gui, Show, w479 h379, gaming hack
 
-if _doubleJumpActivated
-	SetTimer, ActivateDoubleJump, 60000
+_doubleJump := false
 
 Loop:
-_doubleJump := false
 _grounded := false
-
-while(_activated)
+while(true)
 {
 	_pixel := 0x000000
 	
 	SetMouseDelay, 0
-	MouseGetPos, xpos, ypos 
+	MouseGetPos, xpos, ypos
 	PixelGetColor, _pixel, %xpos%, %ypos%, RGB
 
 	colors_buildings := [0xDC5742, 0xEFA57D, 0xF5BD4E, 0xA38D67, 0x99A867]
@@ -51,9 +46,9 @@ while(_activated)
 }
 return
 
-ActivateDoubleJump:
-_doubleJump := true
-SetTimer, ActivateDoubleJump, off
+d::
+_doubleJump := !_doubleJump
+OutputDebug, %_doubleJump% 
 Goto, Loop
 
 GuiClose:
