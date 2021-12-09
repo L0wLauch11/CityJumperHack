@@ -50,6 +50,7 @@ return
 
 ActivateDoubleJump:
 _doubleJump := true
+SetTimer, ActivateDoubleJump, off
 Goto, Loop
 
 GuiClose:
