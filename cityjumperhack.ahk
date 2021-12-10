@@ -10,6 +10,7 @@ Loop:
 _grounded := false
 while(true)
 {
+	OutputDebug, Activated
 	_pixel := 0x000000
 	
 	SetMouseDelay, 0
@@ -42,14 +43,15 @@ while(true)
 
 			_grounded := false
 		}
-	} 
+	}
+
+	; Toggle double jump
+	d::
+	_doubleJump := !_doubleJump
+	OutputDebug, %_doubleJump%
+	Goto, Loop
 }
 return
-
-d::
-_doubleJump := !_doubleJump
-OutputDebug, %_doubleJump% 
-Goto, Loop
 
 GuiClose:
 ExitApp
